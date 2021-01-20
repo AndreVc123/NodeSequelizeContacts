@@ -1,0 +1,25 @@
+<div class="container p-4">
+    <div class="row">
+        {{#each arrayContactos}}
+            <div class="col-md-3">
+                <div class="card text-center border border-info mb-4">
+                    <div class="card-body">
+                        <h4 class="card-title text-center mt-4 mb-4 text-uppercase">{{nombre}}</h4>
+                        <h5 class="m-2 text-uppercase">|-- {{descripcion}} --|</h5>
+                        <p class="m-2">{{telefono}}</p>
+                        <p>{{timeago createdAt}}</p>
+                        <a href="/contacts/delete/{{id}}" class="btn btn-danger">Delete Contact</a>
+                        <a href="/contacts/edit/{{id}}" class="btn btn-secondary">Edit</a>
+                    </div>
+                </div>
+            </div>
+        {{else}}
+            <div class="col-md-4 mx-auto">
+                <div class="card card-body text-center">
+                    <p>There are not contacts saved yet.</p>
+                    <a href="/contacts/add" class="btn btn-primary">Create One</a>
+                </div>
+            </div>
+        {{/each}}
+    </div>
+</div>
